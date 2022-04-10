@@ -1,8 +1,8 @@
 from collections.abc import Callable
-from typing import Generator, Iterable, Union
+from typing import Generator, Iterable, Iterator, Union
 
 
-def my_filter(function: Union[Callable, None], iterable: Iterable) -> Generator:
+def my_filter(function: Union[Callable, None], iterable: Iterable) -> Iterator[Generator]:
     """
     Implement filter function - receives function and iterable and return all of the
     values that the function return for the value that weighed true.
@@ -11,9 +11,7 @@ def my_filter(function: Union[Callable, None], iterable: Iterable) -> Generator:
     :param iterable: Any iterable.
     :return: All of the values that its return value is weighed to true.
     """
-    for item in iterable:
-        if (function and function(item)) or (not function and item):
-            yield item
+    return (item for item in iterable if (function and function(item)) or (not function and item))
 
 
 def main_my_filter() -> None:
