@@ -4,7 +4,7 @@ def count_words(text: str) -> dict[str, int]:
     :param text: String.
     :return: A dictionary hows its keys are words (from text), and its values are their length.
     """
-    text_with_just_letters = "".join(letter for letter in text if letter.isspace() or letter.isalpha())
+    text_with_just_letters = "".join(letter for letter in text if letter.isalnum() or letter.isspace())
     return {word.lower(): len(word) for word in text_with_just_letters.split()}
 
 
