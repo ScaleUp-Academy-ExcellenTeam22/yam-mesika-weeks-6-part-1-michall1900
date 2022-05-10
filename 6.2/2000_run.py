@@ -3,12 +3,12 @@ from time import time
 
 
 def timer(function: Callable, *args, **kwargs) -> float:
-    """
-    Receives function and arguments for her and return the time that took for her to run.
-    :param function: Any function to check her running time.
-    :param args: Arguments for function.
-    :param kwargs: Arguments for function.
-    :return: Function running time.
+    """Receive a function and arguments for it and compute the time that took for it to run.
+
+    :param function: Any function to check its running time.
+    :param args: Function arguments.
+    :param kwargs: Function arguments.
+    :return: Function's running time.
     """
     start_time = time()
     function(*args, **kwargs)
@@ -17,8 +17,8 @@ def timer(function: Callable, *args, **kwargs) -> float:
 
 
 def main_2000_run() -> None:
-    """
-    Using timer function to check what is the running time for some functions.
+    """Use the timer function to check the running time of some functions.
+
     :return: None.
     """
     print(timer(print, "Hello"))
